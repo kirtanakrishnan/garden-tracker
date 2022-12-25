@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Gilda+Display&family=Short+Stack&display=swap');
+
+:root {
+	--light: rgb(172, 251, 178);
+	--dark: #d67530;
+	--orange: #d67530;
+	--primary: #ffe57b;
+	--secondary: #d67530;
+	--alert: #6f3d0c;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Gilda Display', serif;
+  font-family: 'Short Stack', cursive;
+}
+
+input, button {
+	border: none;
+	outline: none;
+	background: none;
+}
+
+body {
+	background-color: var(--light);
+}
+
+.App {
+	padding: 30px;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	padding: 15px;
+}
+
+.subtitle {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+h1 {
+	color: var(--orange);
+	font-size: 32px;
+	font-weight: 600;
+	text-align: left;
+}
+
+h2 {
+  color:rgb(118, 71, 10)
+}
+
+.total-items {
+	color: var(--orange);
+	font-size: 28px;
+	font-weight: 900;
+	background-color: #fdf39c;
+	padding: 5px 25px;
+	border-radius: 8px;
+}
+
+.item-form {
+	display: block;
+	margin: 15px;
+	position: relative;
+}
+
+.item-form:after {
+	content: "";
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	z-index: 0;
+	background-image: linear-gradient(to right, var(--primary), var(--secondary));
+	border-radius: 10px;
+	transition: 0.2s;
+}
+
+.item-form:focus-within:after {
+	top: -3px;
+	left: -3px;
+	right: -3px;
+	bottom: -3px;
+}
+.form-inner {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	justify-content: center;
+	transition: 0.4s;
+	border-radius: 8px;
+}
+.form-inner input {
+	font-size: 18px;
+	padding: 10px 15px;
+	background-color: #FFF;
+}
+
+.form-inner input[type="text"] {
+	border-radius: 8px 0px 0px 8px;
+	flex: 1 1 100%;
+  color:#6f3d0c
+}
+.form-inner input[type="date"] {
+	border-radius: 0px;
+	min-width: 200px;
+}
+.form-inner input[type="submit"] {
+	border-radius: 0px 8px 8px 0px;
+	cursor: pointer;
+	
+	background-image: linear-gradient(to right, var(--primary) 50%, var(--primary) 50%, var(--secondary));
+	background-size: 200%;
+	background-position: 0%;
+
+	color: var(--dark);
+	font-weight: 600;
+	text-transform: uppercase;
+
+	transition: 0.4s;
+}
+
+.form-inner input[type="submit"]:hover {
+	background-position: 100%;
+	color: #FFF;
+}
+
+.item-list {
+	padding: 15px;
+}
+
+.item-list .item {
+	position: relative;
+	padding: 10px 15px;
+	background-color: #FFF;
+	border-radius: 8px;
+	margin-bottom: 15px;
+	display: flex;
+	transition: 0.4s;
+	padding-left: 75px;
+  color:#6f3d0c
+}
+
+.item-list .item .remove-item {
+	position: absolute;
+	width: 0;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	overflow: hidden;
+
+	cursor: pointer;
+	display: block;
+	color: var(--light);
+	font-weight: 600;
+	background-color: var(--alert);
+	border-radius: 8px 0px 0px 8px;
+	transition: 0.2s;
+}
+
+.item-list .item:hover .remove-item {
+	width: 50px;
+}
+
+.item-list .item .desc {
+	flex: 1 1 100%;
+}
+
+.item-list .item .number,
+.item-list .item .date {
+	min-width: 125px;
+	
+}
+.item-list .item:hover {
+	box-shadow: 0px 0px 6px rgba(0,0,0,0.1);
+}
